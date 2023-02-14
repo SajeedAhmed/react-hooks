@@ -6,7 +6,7 @@ export const Validation = () => {
   const [fisrtNameErr, setFirstNameErr] = useState("");
   const [lastName, setLastName] = useState("");
   const [lastNameErr, setLastNameErr] = useState("");
-  const [isSubmit, serIsSubmit] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
   const submit = (event) => {
     event.preventDefault();
     if (fisrtName.length <= 0) {
