@@ -12,7 +12,7 @@ export const ObtimizeValidation = (props) => {
     lastNameErr: "",
     emailErr: "",
   });
-
+  
   const [isSubmit, setIsSubmit] = useState(false);
 
   console.log(formErr);
