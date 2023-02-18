@@ -18,7 +18,7 @@ export const Validation = () => {
 
   const emailRegex =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    const passRegex= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
+  const passRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
  
   const submit = (event) => {
@@ -26,6 +26,10 @@ export const Validation = () => {
     valid();
     if (valid().fisrtName && valid().lastName && valid().email) {
       setIsSubmit(true);
+      //   document.getElementById("nameInput").value = "";
+      setFirstName("");
+      setLastName("");
+      setEmail("");
     } else {
       setIsSubmit(false);
     }
@@ -75,6 +79,7 @@ export const Validation = () => {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>fisrt Name</Form.Label>
           <Form.Control
+            value={fisrtName}
             type="text"
             placeholder="Enter First Name"
             onChange={FirstNamechange}
@@ -84,6 +89,7 @@ export const Validation = () => {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>last Name</Form.Label>
           <Form.Control
+            value={lastName}
             type="text"
             placeholder="Enter Last Name"
             onChange={lastNamechange}
@@ -93,6 +99,7 @@ export const Validation = () => {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>email</Form.Label>
           <Form.Control
+            value={email}
             type="text"
             placeholder="Enter email address"
             onChange={emailchange}
