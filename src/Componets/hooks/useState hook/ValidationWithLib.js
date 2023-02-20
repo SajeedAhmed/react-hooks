@@ -3,11 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
 export const ValidationWithLib = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const {register, handleSubmit, formState: { errors }} = useForm();
   console.log(errors);
   const submit = (data) => {
     console.log(data);
@@ -19,7 +15,7 @@ export const ValidationWithLib = () => {
           <Form.Label>fisrt Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter First Name"
+            placeholder="Enter First Name"z
             {...register("firstName", { required: "this feild is reqired" })}
           />
           <p style={{ color: "red" }}>{errors.firstName?.message}</p>
